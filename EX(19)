@@ -1,0 +1,53 @@
+/**************************************************************************************************
+ Name        : ex19.c
+ Author      : fady magdy
+ Description : You are designing a poster which prints out numbers with a unique 
+               style applied to each of them. The styling is based on the number of 
+               closed paths or holes present in a giver number. The number of holes 
+               that each of the digits from 0 to 9 have are equal to the number of closed 
+               paths in the digit. Their values are:
+               • 1, 2, 3, 5 and 7 = 0 holes.
+               • 0, 4, 6, and 9 = 1 hole.
+               • 8 = 2 holes.
+ **************************************************************************************************/
+
+#include <stdio.h>
+
+#define ONE_HOLES 1
+#define TWO_HOLES 2
+
+int countHoles(int num)
+{
+	int data = 0;
+	int count = 0;
+	if(num == 0)
+	{
+		count += ONE_HOLES;
+	}
+	else
+	{
+		while(num != 0)
+		{
+			/* get the first digit in the number from the right */
+			data = num % 10;
+			if((data == 0) || (data == 4) || (data == 6) || (data == 9))
+			{
+				count += ONE_HOLES;
+			}
+			else if(data == 8)
+			{
+				count += TWO_HOLES;
+			}
+			/* remove the digit in the right to get the next digit in the next loop iteration */
+			num = num / 10;
+		}
+	}
+	return count;
+}
+
+int main(void)
+{
+	int number  = 819;
+	printf("%d",countHoles(number));
+	return 0;
+}
