@@ -1,0 +1,27 @@
+/**************************************************************************************************
+ Name        : EX(45)
+ Author      : Fady magdy
+ Description : Write a C function that takes an array as input and reverse it. 
+               Example:
+               Input : 1,2,3,4,5
+               Output: 5,4,3,2,1
+ **************************************************************************************************/
+ 
+#include <stdio.h>
+
+int main(void)
+{
+	int choise;
+switch(choise){
+case a:
+printf("turn on the vehicle engine");
+break;
+case b:
+printf("turn off the vehicle engine");
+break;
+case c:
+	printf("quit the system");
+	break;
+}
+	return 0;
+}
